@@ -20,7 +20,8 @@ const movieSchema = new Schema({
     }
   },
   mpaaRating: String,
-  cast: [String],
+  // cast: [String],
+  cast:[{type: Schema.Types.ObjectId, ref: 'Performer'}], //added this to be able to reference it with many to many
   nowShowing: { type: Boolean, default: false },
   reviews: [reviewSchema]
 }, {
